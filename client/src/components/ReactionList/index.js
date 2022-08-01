@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ReactionList =({ reactions }) => {
+const ReactionList = ({ reactions }) => {
   return (
     <div className="card mb-3">
       <div className="card-header">
@@ -9,13 +9,10 @@ const ReactionList =({ reactions }) => {
       </div>
       <div className="card-body">
         {reactions &&
-          reactions.map((reaction) => (
+          reactions.map(reaction => (
             <p className="pill mb-3" key={reaction._id}>
-              {reaction.reactionBody} {"// "}
-              <Link
-                to={`/profile/${reaction.username}`}
-                style={{ fontWeight: 700 }}
-              >
+              {reaction.reactionBody} //{' '}
+              <Link to={`/profile/${reaction.username}`} style={{ fontWeight: 700 }}>
                 {reaction.username} on {reaction.createdAt}
               </Link>
             </p>
@@ -25,4 +22,4 @@ const ReactionList =({ reactions }) => {
   );
 };
 
-export default ReactionList
+export default ReactionList;
